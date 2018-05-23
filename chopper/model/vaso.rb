@@ -4,12 +4,12 @@ class Vaso
   def initialize
     @cafe = false
     @te = false
-    @azucar = false
     @cant_azucar = 0
+    @azucar = false       
   end
 
   def cantidad_de_azucar
-  	return @cant_azucar
+    return @cant_azucar
   end
 
 	def tiene_cafe?
@@ -17,6 +17,11 @@ class Vaso
   end
 
   def tiene_azucar?
+    if (@cant_azucar > 0)
+      @azucar = true       
+    else
+      @azucar = false
+    end
     return @azucar
   end
 
