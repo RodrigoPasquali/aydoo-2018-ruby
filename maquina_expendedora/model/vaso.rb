@@ -1,11 +1,12 @@
 class Vaso
-  attr_writer :cafe, :te, :azucar, :cant_azucar
+  attr_writer :cafe, :te, :azucar, :cant_azucar, :leche
 
   def initialize
     @cafe = false
     @te = false
     @cant_azucar = 0
     @azucar = false       
+    @leche = false
   end
 
   def cantidad_de_azucar
@@ -28,4 +29,9 @@ class Vaso
   def tiene_te?
     return @te
   end
+
+  def tiene_leche?
+    return @leche
+  end
+
 end

@@ -8,5 +8,6 @@ describe Vaso do
 		expect(subject.tiene_te?).to be_falsey
 		expect(subject.tiene_azucar?).to be_falsey
 		expect(subject.cantidad_de_azucar).to eq 0
+		expect(subject.tiene_leche?).to be_falsey
 	end
 end
