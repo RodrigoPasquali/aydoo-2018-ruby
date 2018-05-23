@@ -23,5 +23,4 @@ describe HacedorDeCafe do
 
 		expect(un_vaso.tiene_cafe?).to be_truthy
 	end
-
 end
