@@ -17,7 +17,7 @@ describe MaquinaExpendedoraDeBebidas do
 #    expect(un_vaso.cantidad_de_azucar).to eq cantidad_azucar
     expect(un_vaso.tiene_cafe?).to be_truthy
 #    expect(un_vaso.tiene_azucar?).to be_truthy
-#    expect(un_vaso.tiene_te?).to be_falsey
+    expect(un_vaso.tiene_te?).to be_falsey
   end
 
  # it 'deberia hacer te con leche con 0 de azucar' do
