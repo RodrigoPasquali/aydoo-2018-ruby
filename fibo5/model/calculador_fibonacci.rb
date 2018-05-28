@@ -1,5 +1,5 @@
 class CalculadorFibonacci
-	def calcular_sucecion(numero_sucesiones)
+	def calcular_en_lista(numero_sucesiones)
 		lista_numeros = Array.new(numero_sucesiones)
 		lista_numeros[0] = 0
 		numero1 = 0
@@ -17,5 +17,14 @@ class CalculadorFibonacci
 			end
 		end
 		return lista_numeros
+	end
+
+	def calcular_sumatoria(numero_sucesiones)
+		lista_numeros = self.calcular_en_lista(numero_sucesiones)
+		sumatoria = 0
+		lista_numeros.each do |numero|
+			sumatoria += numero
+		end
+		return sumatoria
 	end
 end
