@@ -1,5 +1,3 @@
 class Sentido
-	def sentido_inverso(lista_numeros)
-		return lista_numeros.sort.reverse!
-	end
+	attr_accessor :sentido_siguiente
 end

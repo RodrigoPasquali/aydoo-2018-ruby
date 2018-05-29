@@ -4,6 +4,8 @@ require_relative './model/calculador_fibonacci'
 require_relative './model/calculador_fibonacci_lista'
 require_relative './model/sentido'
 
+
+
 get '/fibonacci/:n/:funcionamiento' do
   numero = params[:n].to_i
   funcionamiento = params[:funcionamiento]
