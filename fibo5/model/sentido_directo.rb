@@ -1,4 +1,3 @@
-require_relative './sentido'
 require_relative './sentido_inverso'
 
 class SentidoDirecto < Sentido

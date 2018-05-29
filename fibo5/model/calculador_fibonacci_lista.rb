@@ -1,4 +1,3 @@
-require_relative './calculador_fibonacci'
 require_relative './calculador_fibonacci_sumatoria'
 
 class CalculadorFibonacciLista < CalculadorFibonacci

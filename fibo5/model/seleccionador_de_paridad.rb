@@ -1,6 +1,7 @@
 class SeleccionadorDeParidad
 	attr_reader :numeros_pares, :numeros_impares
-
+	attr_accessor :siguiente_seleccionador
+	
 	def initialize
 		@numeros_pares = [] 
 		@numeros_impares = [] 
