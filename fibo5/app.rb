@@ -1,17 +1,12 @@
 require 'sinatra'
 require 'sinatra/json'
 require_relative './model/calculador_fibonacci'
+require_relative './model/calculador_fibonacci_lista'
 
-get '/fibonacci/:n/lista' do
+get '/fibonacci/:n/:funcionamiento' do
   numero = params[:n].to_i
-  calculador_fibo = CalculadorFibonacci.new
-  resultado = calculador_fibo.calcular_en_lista(numero)
-  json({"fibonacci": { "limite": numero, "lista": resultado } })
-end
-
-get '/fibonacci/:n/sumatoria' do
-  numero = params[:n].to_i
-  calculador_fibo = CalculadorFibonacci.new
-  resultado = calculador_fibo.calcular_sumatoria(numero)
+  funcionamiento = params[:funcionamiento]
+  calculador_fibo = CalculadorFibonacciLista.new
+  resultado = calculador_fibo.calcular_fibo(numero, funcionamiento)
   json({"fibonacci": { "limite": numero, "lista": resultado } })
 end
