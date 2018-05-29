@@ -2,7 +2,6 @@ require_relative './sentido'
 require_relative './sentido_inverso'
 
 class SentidoDirecto < Sentido
-
 	def initialize
 		@sentido_siguiente = SentidoInverso.new
 	end
@@ -14,6 +13,4 @@ class SentidoDirecto < Sentido
 			return @sentido_siguiente.aplicar_sentido(lista_numeros, sentido)	
 		end
 	end
-
-
 end
