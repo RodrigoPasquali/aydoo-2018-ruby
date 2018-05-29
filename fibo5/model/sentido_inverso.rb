@@ -5,7 +5,11 @@ class SentidoInverso < Sentido
 		if (sentido == 'inverso')
 			return self.sentido_inverso(lista_numeros)
 		else
-			return "Opción no válida"
+			if (sentido == '')
+				return lista_numeros
+			else
+				return "Opción no válida"
+			end
 		end
 	end
 

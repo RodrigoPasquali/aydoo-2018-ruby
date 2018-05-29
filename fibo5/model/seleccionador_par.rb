@@ -1,4 +1,5 @@
 require_relative './seleccionador_impar'
+require_relative './seleccionador_de_paridad'
 
 class SeleccionadorPar < SeleccionadorDeParidad
 	

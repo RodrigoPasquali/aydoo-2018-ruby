@@ -1,9 +1,8 @@
 require 'sinatra'
 require 'sinatra/json'
-#require_relative './model/calculador_fibonacci'
 require_relative './model/calculador_fibonacci_lista'
-#require_relative './model/sentido'
 require_relative './model/sentido_directo'
+require_relative './model/seleccionador_par'
 
 get '/fibonacci/:n/:funcionamiento' do
   numero = params[:n].to_i
@@ -16,14 +15,21 @@ end
 get '/fibonacci/:n' do
   numero = params[:n].to_i
   sentido = params[:sentido].to_s
+  paridad = params[:solo].to_s
   funcionamiento = 'lista'
   calculador_fibo = CalculadorFibonacciLista.new
   aplicador_sentido = SentidoDirecto.new
+  seleccionar_paridad = SeleccionadorPar.new
   lista_numeros = calculador_fibo.calcular_fibo(numero, funcionamiento)
-  resultado = aplicador_sentido.aplicar_sentido(lista_numeros, sentido)
-  if (resultado == 'Opción no válida')
-  	json({"error": resultado })
+  resultado_sentido = aplicador_sentido.aplicar_sentido(lista_numeros, sentido)
+  if (resultado_sentido == 'Opción no válida')
+  	json({"error": resultado_sentido })
   else
-  	json({"fibonacci": { "limite": numero, "lista": resultado } })
+  	resultado_paridad = seleccionar_paridad.obtener_numeros(resultado_sentido, paridad)
+  	if (resultado_paridad == 'Opción no válida')
+  		json({"error": resultado_paridad })
+  	else
+  		json({"fibonacci": { "limite": numero, "lista": resultado_paridad } })
+  	end
   end	
 end
