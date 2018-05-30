@@ -40,14 +40,4 @@ describe 'Sentido' do
 
     expect(valor_obtenido).to eq(valor_esperado)
   end
-
-  it 'sentido diagonal deberia ser Opción no válida' do
-    array = [0,1,1,3]
-    valor_esperado = 'Opción no válida'
-
-    valor_obtenido = sentido.aplicar_sentido(array, 'diagonal')
-
-    expect(valor_obtenido).to eq(valor_esperado)
-  end
-
 end
